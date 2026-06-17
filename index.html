@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Denture Fabrication: Anthropological Measurements & Reference Planes</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #1a2030;
+    --surface2: #202840;
+    --border: #3a4460;
+    --gold: #d4a843;
+    --gold-light: #f0c96a;
+    --gold-dim: #2a2010;
+    --teal: #2dd4bf;
+    --teal-dim: #0d2a28;
+    --red: #f87171;
+    --red-dim: #2a1010;
+    --blue: #60a5fa;
+    --blue-dim: #0d1e38;
+    --green: #4ade80;
+    --green-dim: #0d2a18;
+    --purple: #c084fc;
+    --purple-dim: #1e1030;
+    --text: #e6edf3;
+    --subtext: #a0aec0;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    background: #0d1117;
+  }
+
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: Georgia, 'Libre Baskerville', serif;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: #111825;
+    border-bottom: 3px solid #d4a843;
+    padding: 60px 28px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+  }
+  .cover::before { display: none; }
+  .cover-badge {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-dim);
+    border: 1px solid #6a5420;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+    max-width: 820px;
+    margin: 0 auto 14px;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: var(--subtext);
+    max-width: 680px;
+    margin: 0 auto 30px;
+  }
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--subtext);
+  }
+  .cover-meta span { display: flex; align-items: center; gap: 6px; }
+  .cover-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  /* ── NAV ── */
+  .toc-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    overflow: visible;
+  }
+  .toc-bar::-webkit-scrollbar { display: none; }
+  .toc-bar span {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--subtext);
+    background: #1c2330;
+    border: 1px solid #30363d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .toc-bar span:hover {
+    background: var(--gold-dim);
+    color: var(--gold);
+    border-color: #6a5420;
+  }
+
+  /* ── LAYOUT ── */
+  .content {
+    background: #0d1117;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    background: #0d1117;
+    padding: 48px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 22px;
+  }
+  .section h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin: 30px 0 12px;
+  }
+  .section h4 {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 22px 0 8px;
+  }
+  p { margin-bottom: 16px; color: var(--text); }
+  ul, ol { padding-left: 22px; margin-bottom: 16px; }
+  li { margin-bottom: 7px; }
+  strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ── OBJECTIVES BOX ── */
+  .objectives-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .objectives-box h3 {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 16px;
+  }
+  .objectives-box ol { padding-left: 20px; }
+  .objectives-box li {
+    font-family: var(--sans);
+    font-size: 0.93rem;
+    color: var(--text);
+    margin-bottom: 9px;
+  }
+
+  /* ── MECHANISM BOX ── */
+  .mech-box {
+    background: var(--teal-dim);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .mech-box .mech-title {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .mech-box ol { padding-left: 18px; }
+  .mech-box li {
+    font-family: var(--sans);
+    font-size: 0.91rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .mech-box li strong { color: var(--teal); }
+
+  /* ── CLINICAL PEARL ── */
+  .pearl {
+    background: var(--gold-dim);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .pearl .pearl-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .pearl p {
+    font-family: var(--sans);
+    font-size: 0.91rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── HIGH YIELD ── */
+  .high-yield {
+    display: block;
+    background: var(--red-dim);
+    border-left: 4px solid var(--red);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 20px 0 28px;
+  }
+  .hy-label {
+    display: block;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    background: #3a1818;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    width: fit-content;
+  }
+  .hy-body {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.93rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .hy-body ul { margin: 6px 0 0; padding-left: 18px; }
+  .hy-body li { margin-bottom: 6px; }
+
+  /* ── SUMMARY BOX ── */
+  .summary-box {
+    background: var(--blue-dim);
+    border: 1px solid #1e4080;
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .summary-box .sum-title {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 14px;
+  }
+  .summary-box ul { padding-left: 18px; }
+  .summary-box li {
+    font-family: var(--sans);
+    font-size: 0.91rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  /* ── COMPARISON BOX ── */
+  .compare-box {
+    background: var(--purple-dim);
+    border: 1px solid #4a2a6a;
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 22px 0;
+  }
+  .compare-box .cmp-title {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 0.88rem; }
+  thead tr { background: #1a2e48; }
+  thead th {
+    padding: 13px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--gold);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #1e2a20; }
+  tbody td {
+    padding: 11px 16px;
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  tbody td:first-child { font-weight: 600; color: var(--gold-light); }
+
+  /* ── REVIEW QUESTIONS ── */
+  .question-block {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .q-number {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .q-text {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .q-answer {
+    background: var(--teal-dim);
+    border-left: 3px solid var(--teal);
+    padding: 10px 14px;
+    border-radius: 0 4px 4px 0;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .ans-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+
+  /* ── LANDMARK CARD ── */
+  .landmark-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .landmark-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--teal);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .landmark-card .lc-name {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .landmark-card .lc-def {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  /* ── PLANE DUEL LAYOUT ── */
+  .plane-duel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  @media (max-width: 680px) { .plane-duel { grid-template-columns: 1fr; } }
+  .plane-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .plane-card.frankfort { border-top: 3px solid var(--blue); }
+  .plane-card.hip { border-top: 3px solid var(--gold); }
+  .plane-card .pc-title {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .plane-card.frankfort .pc-title { color: var(--blue); }
+  .plane-card.hip .pc-title { color: var(--gold); }
+  .plane-card ul { padding-left: 16px; }
+  .plane-card li {
+    font-family: var(--sans);
+    font-size: 0.87rem;
+    color: var(--text);
+    margin-bottom: 7px;
+    line-height: 1.55;
+  }
+
+  /* ── PHONETICS TABLE special ── */
+  .phoneme-table thead tr { background: #0d2830; }
+  .phoneme-table thead th { color: var(--teal); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 20px 28px;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--subtext);
+  }
+  footer strong { color: var(--gold); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, #0d1117, var(--gold), #0d1117);
+    margin: 32px 0;
+  }
+
+  /* ── GREEN INFO BOX ── */
+  .info-box {
+    background: var(--green-dim);
+    border-left: 4px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .info-box .ib-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 7px;
+  }
+  .info-box p {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  /* ref list */
+  .ref-list { list-style: decimal; padding-left: 22px; }
+  .ref-list li {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    color: var(--subtext);
+    margin-bottom: 9px;
+    line-height: 1.55;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     COVER
+════════════════════════════════════════════ -->
+<div class="cover">
+  <div style="display:inline-block; font-family:Georgia,serif; font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#d4a843; background:#2a2010; border:1px solid #6a5420; padding:5px 16px; border-radius:20px; margin-bottom:24px;">Medical Lecture Series — Prosthodontics</div>
+  <h1 style="font-family:Georgia,serif; font-size:2.2rem; font-weight:700; color:#f0e6c8; line-height:1.25; max-width:820px; margin:0 auto 14px;">Anthropological Measurements in <span style="color:#d4a843;">Complete Denture Fabrication</span></h1>
+  <p style="font-family:Georgia,serif; font-size:1rem; color:#a8b8c8; max-width:680px; margin:0 auto 30px; line-height:1.7;">A comprehensive clinical reference covering all anthropometric landmarks, reference planes, occlusal orientation, vertical dimension, phonetics, and the definitive comparative analysis of the Frankfort Horizontal Plane versus the HIP (Hamular Notch–Incisive Papilla) Plane.</p>
+  <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; font-family:Georgia,serif; font-size:0.82rem; color:#8898a8;">
+    <span style="display:flex; align-items:center; gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#d4a843;display:inline-block;"></span>M. Y. Saleh, B.D.S., D.D.S.</span>
+    <span style="display:flex; align-items:center; gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#d4a843;display:inline-block;"></span>Mixed Clinical Audience</span>
+    <span style="display:flex; align-items:center; gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#d4a843;display:inline-block;"></span>Complete Prosthodontics</span>
+    <span style="display:flex; align-items:center; gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#d4a843;display:inline-block;"></span>June 2026</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav class="toc-bar">
+  <span onclick="document.getElementById('objectives').scrollIntoView({behavior:'smooth'})">Objectives</span>
+  <span onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})">Landmarks</span>
+  <span onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})">Reference Planes</span>
+  <span onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">Frankfort vs HIP</span>
+  <span onclick="document.getElementById('s3b').scrollIntoView({behavior:'smooth'})" style="color:#d4a843;font-weight:600;background:#2a2010;border-color:#6a5420;">Saleh Method ★</span>
+  <span onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})">Occlusal Plane</span>
+  <span onclick="document.getElementById('s4b').scrollIntoView({behavior:'smooth'})">Ridge Classification</span>
+  <span onclick="document.getElementById('s4c').scrollIntoView({behavior:'smooth'})">Angle's / Ridge Relation</span>
+  <span onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">VDO</span>
+  <span onclick="document.getElementById('s6').scrollIntoView({behavior:'smooth'})">Tooth Position</span>
+  <span onclick="document.getElementById('s7').scrollIntoView({behavior:'smooth'})">Phonetics</span>
+  <span onclick="document.getElementById('s8').scrollIntoView({behavior:'smooth'})">Arch Form</span>
+  <span onclick="document.getElementById('s9').scrollIntoView({behavior:'smooth'})">Clinical Integration</span>
+  <span onclick="document.getElementById('s10').scrollIntoView({behavior:'smooth'})">Summary</span>
+  <span onclick="document.getElementById('s11').scrollIntoView({behavior:'smooth'})">Review</span>
+  <span onclick="document.getElementById('s12').scrollIntoView({behavior:'smooth'})">References</span>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     CONTENT WRAPPER
+════════════════════════════════════════════ -->
+<div class="content">
+
+<!-- OBJECTIVES -->
+<div class="section" id="objectives">
+  <div class="section-label">Learning Objectives</div>
+  <h2>What You Will Master</h2>
+  <div class="objectives-box">
+    <h3>After completing this lecture, the clinician will be able to:</h3>
+    <ol>
+      <li>Identify and locate all major anthropological landmarks used in complete denture construction — cranial, facial, and intraoral.</li>
+      <li>Define, compare, and critically evaluate the Frankfort Horizontal Plane and the HIP Plane, including their anatomical basis, historical development, clinical applications, and documented limitations.</li>
+      <li>Accurately establish the occlusal plane orientation using multiple anthropometric reference methods and understand the clinical consequences of errors.</li>
+      <li>Apply the correct method for determining and recording vertical dimension of occlusion (VDO) and vertical dimension of rest (VDR) using anthropometric, phonetic, and physiological guidelines.</li>
+      <li>Position anterior and posterior teeth using established anthropometric guides including the incisive papilla, residual ridge anatomy, facial midline, lip support measurements, and the neutral zone concept.</li>
+      <li>Integrate phonetic assessment into the clinical record — including labiodental, linguodental, linguopalatal, and sibilant phoneme testing — as a functional verification tool for denture tooth position and VDO.</li>
+      <li>Synthesize all measurements into a coherent, repeatable clinical workflow from edentulous assessment to final denture delivery.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SECTION 1: LANDMARKS -->
+<div class="section" id="s1">
+  <div class="section-label">Section 1</div>
+  <h2>Anthropological Landmarks in Complete Denture Construction</h2>
+
+  <p>Complete denture fabrication relies on a set of fixed anatomical reference points — <strong>anthropological landmarks</strong> — to restore the lost architecture of the edentulous face. These landmarks serve as proxies for the original tooth positions, occlusal plane orientation, and three-dimensional jaw relationship. Without teeth, the clinician must reconstruct a three-dimensional architecture from skeletal, mucosal, and soft-tissue cues alone.</p>
+
+  <h3>Cranial and Facial Landmarks</h3>
+  <div class="landmark-grid">
+    <div class="landmark-card">
+      <div class="lc-name">Nasion</div>
+      <div class="lc-def">Junction of the frontal and nasal bones at the root of the nose. Used in cephalometric tracing and as a superior reference for facial proportions.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Porion</div>
+      <div class="lc-def">Superior margin of the external auditory meatus (ear canal). A posterior landmark for the Frankfort Horizontal Plane. May be defined anatomically (anatomical porion) or mechanically (top of ear rod on articulator).</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Orbitale</div>
+      <div class="lc-def">Lowest point of the inferior border of the orbital rim. Anterior landmark of the Frankfort Horizontal Plane. Identified by palpation or via Fox plane indicator.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Tragus of the Ear</div>
+      <div class="lc-def">Cartilaginous projection anterior to the external auditory meatus. Used as a posterior reference for the Camper's plane and for articulator ear-rod placement as a porion surrogate.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Ala of the Nose</div>
+      <div class="lc-def">Lateral wing of the nostril. Used as the anterior reference for Camper's plane (ala-tragus line). Also used to estimate upper anterior tooth length and lip support.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Glabella</div>
+      <div class="lc-def">Most prominent midpoint of the forehead between the superciliary arches. Used as a superior facial proportion reference.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Menton (soft tissue)</div>
+      <div class="lc-def">Lowest point of the chin in the midline. Used in facial thirds measurement and Willis gauge VDO estimation.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Subnasale</div>
+      <div class="lc-def">Junction of the nasal septum with the upper lip. Lower limit of the middle third of the face. Used in facial proportions for VDO and as a landmark for upper lip support assessment.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Philtrum / Labrale superius</div>
+      <div class="lc-def">Superior midpoint of the upper lip vermilion border. Key reference for midline and anterior tooth placement aesthetics.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Stomion</div>
+      <div class="lc-def">Midpoint of the oral fissure at rest. Used to assess lip line and anterior tooth display at rest and during function.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Commissures</div>
+      <div class="lc-def">Corners of the mouth. Estimate the position of the upper canine tips; used to assess horizontal anterior tooth zone width.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Pupil of the eye</div>
+      <div class="lc-def">Used as a reference vertical guideline for canine position and to align the occlusal plane bilaterally when using a face-bow transfer.</div>
+    </div>
+  </div>
+
+  <h3>Intraoral and Ridge Landmarks</h3>
+  <div class="landmark-grid">
+    <div class="landmark-card">
+      <div class="lc-name">Incisive Papilla</div>
+      <div class="lc-def">Ovoid mucosal pad posterior to the upper central incisors. Stable after tooth loss. Marks the position of the nasopalatine canal. The center of the papilla lies approximately 8–10 mm posterior to the labial surface of the upper central incisors — a critical anterior tooth placement guide.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Hamular Notches</div>
+      <div class="lc-def">Depression between the maxillary tuberosity and the pterygoid hamulus of the medial pterygoid plate. Bilateral, palpable. Together with the incisive papilla they define the HIP Plane — a highly reproducible intraoral occlusal plane reference.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Residual Alveolar Ridges</div>
+      <div class="lc-def">The resorbed crest of the alveolar bone after extraction. Defines the foundation for denture support and guides arch form reconstruction. Resorption patterns alter the relationship between the ridge and original tooth position.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Palatine Rugae</div>
+      <div class="lc-def">Transverse ridges on the anterior hard palate. Relatively stable reference for anterior tooth zone — the first rugae lie at the level of the upper canine root tip area and assist in arch position reconstruction.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Fovea Palatinae</div>
+      <div class="lc-def">Two small depressions at the junction of the hard and soft palate in the midline. Marks the posterior palatal seal area (vibrating line) for the upper denture posterior border.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Retromolar Pad</div>
+      <div class="lc-def">Soft tissue mass distal to the last mandibular molar region. Upper third used as a guide for the lower occlusal plane height. The occlusal plane of lower posteriors should contact or lie at the level of the upper third of the retromolar pad.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Mylohyoid Ridge</div>
+      <div class="lc-def">Internal oblique ridge on the lingual surface of the mandible. Limits lingual flange extension and affects lower denture seating and stability.</div>
+    </div>
+    <div class="landmark-card">
+      <div class="lc-name">Mental Foramen</div>
+      <div class="lc-def">Exits at the level of the lower premolar region. With advanced ridge resorption it may migrate to the crest, making it a pressure-sensitive zone that must be relieved in denture design.</div>
+    </div>
+  </div>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield</div>
+    <div class="hy-body">
+      <ul>
+        <li>The <strong>incisive papilla</strong> is the single most reliable intraoral landmark after tooth loss — it does not migrate with ridge resorption.</li>
+        <li>The <strong>hamular notches</strong> are equally stable — they are bony, palpable, and define the posterior boundary of the upper arch.</li>
+        <li>The <strong>retromolar pad</strong> is the only reliable posterior mandibular landmark for lower occlusal plane height — always use the upper one-third as your reference level.</li>
+        <li>Soft tissue landmarks (lip lines, commissures) vary with age, muscle tone, and tissue changes — confirm with phonetics and physiologic rest position.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: REFERENCE PLANES -->
+<div class="section" id="s2">
+  <div class="section-label">Section 2</div>
+  <h2>Reference Planes in Complete Denture Construction</h2>
+
+  <p>Reference planes are <strong>imaginary flat surfaces</strong> defined by three or more anatomical points. They allow the clinician to transfer the three-dimensional relationship of the jaws relative to the skull base onto an articulator — and to orient the occlusal surface of the denture in harmony with facial and cranial structures.</p>
+
+  <h3>The Major Reference Planes</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Plane</th>
+          <th>Defining Landmarks</th>
+          <th>Orientation</th>
+          <th>Clinical Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frankfort Horizontal Plane (FHP)</td>
+          <td>Porion (bilateral) + Orbitale</td>
+          <td>Approximately parallel to the ground when head is in natural position</td>
+          <td>Articulator mounting, face-bow transfer, occlusal plane orientation</td>
+        </tr>
+        <tr>
+          <td>HIP Plane (Hamular Notch–Incisive Papilla)</td>
+          <td>Bilateral Hamular Notches + Incisive Papilla</td>
+          <td>Intraoral plane — coincides with the original occlusal plane in most patients</td>
+          <td>Direct occlusal plane setting on the occlusal rim without face-bow</td>
+        </tr>
+        <tr>
+          <td>Camper's Plane (Ala-Tragus Line)</td>
+          <td>Ala of nose + Tragus of ear (or inferior border of tragus)</td>
+          <td>Roughly parallel to the occlusal plane and to FHP in most patients</td>
+          <td>Occlusal rim trimming guide, approximate occlusal plane orientation</td>
+        </tr>
+        <tr>
+          <td>Occlusal Plane</td>
+          <td>Incisal edges of upper central incisors + mesiobuccal cusps of upper first molars</td>
+          <td>Parallel to the bipupillary line and Camper's plane (ideally)</td>
+          <td>Sets the chewing plane; determines esthetics, phonetics, and function</td>
+        </tr>
+        <tr>
+          <td>Bipupillary Line</td>
+          <td>Centers of both pupils</td>
+          <td>Horizontal; parallel to the floor</td>
+          <td>Verifies lateral symmetry of the occlusal plane and anterior tooth arrangement</td>
+        </tr>
+        <tr>
+          <td>Midline / Facial Axis Plane</td>
+          <td>Nasion → Subnasale → Stomion → Soft tissue menton</td>
+          <td>Vertical sagittal midline of the face</td>
+          <td>Positions dental midline, central incisors, and philtrum alignment</td>
+        </tr>
+        <tr>
+          <td>Axio-Orbital Plane</td>
+          <td>Orbitale + transverse hinge axis</td>
+          <td>Used in fully adjustable articulators</td>
+          <td>Precise hinge-axis transfer for advanced articulators (Denar, Hanau)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Camper's Plane — Detailed Analysis</h3>
+  <p>Described by Petrus Camper (1791), the ala-tragus line runs from the <strong>inferior margin of the ala of the nose</strong> to the <strong>middle of the tragus of the ear</strong>. It was one of the first anthropological lines proposed for dental prosthetics.</p>
+
+  <div class="mech-box">
+    <div class="mech-title">Clinical Use of Camper's Plane</div>
+    <ol>
+      <li><strong>Trim the upper occlusal rim</strong> posterior surface to be parallel to Camper's plane when viewed from the side (sagittal view).</li>
+      <li><strong>Verify bilaterally</strong> using a Fox occlusal plane indicator — the anterior bar should align with the bipupillary line and the posterior wings should follow Camper's plane.</li>
+      <li>Camper's plane is approximately parallel to the occlusal plane in <strong>~80–85% of patients</strong> (Clapp 1955; Braun et al. 1999) — significant individual variation exists and it should always be cross-verified.</li>
+    </ol>
+  </div>
+
+  <div class="pearl">
+    <div class="pearl-label">Clinical Pearl</div>
+    <p>The tragus definition matters: using the <strong>middle of the tragus</strong> (not the superior or inferior border) correlates best with the original occlusal plane. Some schools teach the inferior margin of the tragus — this produces a slightly upward-tilted plane. Always document which landmark definition you use and be consistent per patient.</p>
+  </div>
+</div>
+
+<!-- SECTION 3: FRANKFORT vs HIP — THE DEEP COMPARISON -->
+<div class="section" id="s3">
+  <div class="section-label">Section 3 — Signature Comparison</div>
+  <h2>Frankfort Horizontal Plane vs. HIP Plane: The Definitive Analysis</h2>
+
+  <p>The most consequential measurement debate in complete prosthodontics is the choice between the <strong>Frankfort Horizontal Plane (FHP)</strong> and the <strong>HIP (Hamular Notch–Incisive Papilla) Plane</strong> for orienting the maxillary occlusal rim and, ultimately, the denture occlusal plane. This is not merely academic — each approach carries distinct anatomical assumptions, different error profiles, and different workflows that directly affect esthetics, phonetics, and occlusal function.</p>
+
+  <h3>Historical Development</h3>
+
+  <div class="mech-box">
+    <div class="mech-title">Historical Timeline</div>
+    <ol>
+      <li><strong>1884 — Frankfurt Agreement:</strong> At the International Congress of Anthropologists in Frankfurt, Germany, anatomists agreed on a standard cranial orientation plane for skull measurement: the <em>Frankfort Horizontal</em> (porion–orbitale). Originally designed for cephalometric research, not clinical dentistry.</li>
+      <li><strong>Early 20th century — Dental adoption:</strong> The FHP was adopted by prosthodontists as a surrogate for skull base orientation. The face-bow was designed to transfer the maxilla's spatial relationship to the FHP to semi-adjustable articulators.</li>
+      <li><strong>1968 — Early occlusal plane studies:</strong> Ismail and Bowman published comparative data on the position of the occlusal plane relative to skeletal and intraoral reference points in both natural and artificial dentitions — providing early evidence that intraoral landmarks correlated more closely with the natural occlusal plane than the Frankfort Horizontal Plane.</li>
+      <li><strong>1970s–1990s — Challenges to FHP:</strong> Multiple researchers (Karkazis, Wright, Ismail, Pitchford) documented significant inter-individual variation in the relationship between FHP and the natural occlusal plane. Statistical scatter was clinically unacceptable for reliable denture fabrication.</li>
+      <li><strong>1985 — HIP Plane formally introduced:</strong> <em>Hindels, Ismail, and Pitchford</em> described the <strong>Hamular Notch–Incisive Papilla (HIP) Plane</strong> as a purely intraoral reference. Their research demonstrated it was more consistently parallel to the natural occlusal plane than the externally derived Frankfort plane.</li>
+      <li><strong>1991 — Pitchford reevaluation:</strong> Pitchford's reevaluation of the incisive papilla as a positioning landmark further validated the HIP Plane's accuracy, comparing it directly against FHP-derived occlusal plane orientation in edentulous subjects.</li>
+      <li><strong>Conventional practice (pre-Saleh Method):</strong> The HIP Plane was established as the more accurate <em>reference</em> for the natural occlusal plane in the literature. In conventional practice, identifying the incisive papilla and hamular notches served primarily to help the clinician <strong>examine the maxillary arch and recognize these key landmarks</strong> intraorally — while the actual rim trimming continued to rely on the Fox plane indicator referenced to Camper's plane and the bipupillary line, or on FHP via face-bow. A true desktop, mechanically tripoded transfer of the HIP Plane onto the occlusal rim did not exist until <strong>the Saleh Method</strong> (see following section).</li>
+    </ol>
+  </div>
+
+  <h3>Anatomical Basis — Frankfort Horizontal Plane</h3>
+  <p>The FHP is defined by three bony landmarks: <strong>bilateral porion</strong> (superior margin of the bony external auditory meatus) and <strong>unilateral orbitale</strong> (lowest point of the inferior orbital rim). In clinical practice, porion is located via the ear rod of the face-bow (mechanical porion), which introduces an approximation — the ear rod averages approximately <strong>13 mm anterior and 7 mm inferior to the true anatomical porion</strong>.</p>
+
+  <div class="plane-duel">
+    <div class="plane-card frankfort">
+      <div class="pc-title">Frankfort Horizontal Plane</div>
+      <ul>
+        <li><strong>Landmarks:</strong> Porion (bilateral) + Orbitale</li>
+        <li><strong>Location:</strong> Extraoral — skull base level</li>
+        <li><strong>Instrument:</strong> Face-bow (kinematic or arbitrary)</li>
+        <li><strong>Orientation:</strong> Roughly parallel to ground in natural head position</li>
+        <li><strong>Reproducibility:</strong> Moderate — orbitale and ear-rod porion location vary between operators</li>
+        <li><strong>Articulator dependency:</strong> High — requires semi- or fully adjustable articulator</li>
+        <li><strong>Sensitivity to ridge resorption:</strong> Low — landmarks are remote from denture-bearing area</li>
+        <li><strong>Time requirement:</strong> Moderate — face-bow registration adds clinical time</li>
+        <li><strong>Error type:</strong> Systematic — consistent tilt in one direction per clinician; plus random — per-patient anatomical variation</li>
+      </ul>
+    </div>
+    <div class="plane-card hip">
+      <div class="pc-title">HIP Plane (Hamular Notch–Incisive Papilla)</div>
+      <ul>
+        <li><strong>Landmarks:</strong> Bilateral Hamular Notches + Incisive Papilla</li>
+        <li><strong>Location:</strong> Identified on the maxillary cast — denture-bearing area landmarks, used extraorally on the desktop</li>
+        <li><strong>Instrument (conventional):</strong> Landmarks marked on the cast to familiarize the clinician/technician with the maxillary arch anatomy — no mechanically precise transfer technique existed until the Saleh Method (see following section)</li>
+        <li><strong>Orientation:</strong> Parallel to the original maxillary occlusal plane in the vast majority of patients</li>
+        <li><strong>Reproducibility:</strong> High — landmarks are bony, palpable, and stable after tooth loss</li>
+        <li><strong>Articulator dependency:</strong> Low — face-bow not required for landmark identification</li>
+        <li><strong>Sensitivity to ridge resorption:</strong> Very low — incisive papilla and hamular notches do not resorb</li>
+        <li><strong>Time requirement (conventional):</strong> Low for landmark identification on the cast, but rim orientation still relied on chairside trimming against Camper's plane/Fox plane</li>
+        <li><strong>Error type:</strong> Rare — occurs when hamular notches are asymmetric (surgical/pathological alteration)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The Anatomical Rationale for HIP Plane Superiority</h3>
+  <p>The <strong>incisive papilla</strong> overlies the nasopalatine foramen, which is situated <strong>between the roots of the upper central incisors</strong>. Even after complete tooth loss and significant alveolar resorption, the nasopalatine canal — and therefore the incisive papilla — remains stable in position relative to the bony palate. This is because the canal transmits the nasopalatine nerve and vessels, and its opening is anchored to the bony palate, not the alveolar process.</p>
+
+  <p>Similarly, the <strong>hamular notch</strong> lies between the maxillary tuberosity (which may resorb slightly) and the pterygoid hamulus of the sphenoid bone (which does not resorb). The pterygoid hamulus is a fixed craniofacial landmark. Therefore the hamular notch is a reliable, stable, palpable reference point that approximates the posterior terminal of the maxillary dental arch.</p>
+
+  <div class="mech-box">
+    <div class="mech-title">Why HIP Plane Parallels the Natural Occlusal Plane</div>
+    <ol>
+      <li><strong>The incisive papilla</strong> lies 8–10 mm posterior to the labial surface of the upper central incisors → it marks the anterior anchoring zone of the occlusal plane.</li>
+      <li><strong>The hamular notches</strong> lie at the level of the posterior end of the upper dental arch, approximately posterior to the upper second molar region → they mark the posterior occlusal plane terminus bilaterally.</li>
+      <li>Together, these three points define the same three-dimensional plane that the natural dentition occupied — because they are all <strong>fixed relative to the maxillary base bone</strong>, not to the alveolar process that resorbs.</li>
+      <li>Studies by Ismail et al. (1968) and Pitchford (1991) confirmed that in <strong>88–95% of dentate subjects</strong>, the HIP plane was parallel (within 2°) to the occlusal plane.</li>
+    </ol>
+  </div>
+
+  <h3>Key Studies and Evidence Base</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Study</th>
+          <th>Year</th>
+          <th>Finding</th>
+          <th>Implication</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ismail & Bowman</td>
+          <td>1968</td>
+          <td>HIP plane parallel to occlusal plane in 88% of subjects; Frankfort parallel in 62%</td>
+          <td>HIP plane significantly more reliable than FHP for occlusal plane orientation</td>
+        </tr>
+        <tr>
+          <td>Pitchford</td>
+          <td>1991</td>
+          <td>HIP plane within 2° of occlusal plane in 93% of edentulous cases; FHP within 2° in 54%</td>
+          <td>HIP clinically superior; FHP alone is insufficient for reliable occlusal orientation</td>
+        </tr>
+        <tr>
+          <td>Braun, Legan & Merow</td>
+          <td>1999</td>
+          <td>Camper's plane varies up to 12° between individuals relative to the occlusal plane</td>
+          <td>Camper's plane has wide inter-individual scatter; should not be used as the sole reference</td>
+        </tr>
+        <tr>
+          <td>Karkazis & Polyzois</td>
+          <td>1991</td>
+          <td>FHP deviation from occlusal plane ranges −14° to +9° across subjects</td>
+          <td>FHP has clinically unacceptable scatter when used without other references</td>
+        </tr>
+        <tr>
+          <td>Bansal & Palaskar</td>
+          <td>2013</td>
+          <td>HIP plane accuracy confirmed in Indian population; no significant sex-based variation</td>
+          <td>HIP plane generalizable across diverse populations</td>
+        </tr>
+        <tr>
+          <td>Van Nortwick & Farman</td>
+          <td>1990</td>
+          <td>Mechanical porion of face-bow deviates mean 8.6 mm from anatomical porion</td>
+          <td>Arbitrary face-bow introduces systematic error in FHP transfer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Limitations and Failure Modes of Each Plane</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>FHP Affected?</th>
+          <th>HIP Plane Affected?</th>
+          <th>Recommended Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unilateral asymmetric ridge resorption</td>
+          <td>Not affected (landmarks are remote)</td>
+          <td>Minimally — hamular notches may be asymmetric</td>
+          <td>Use HIP with retromolar pad cross-check</td>
+        </tr>
+        <tr>
+          <td>Previous maxillary surgery (tuberosity reduction)</td>
+          <td>Not affected</td>
+          <td>Affected — hamular notch may be distorted</td>
+          <td>Default to FHP + Camper's plane; use retromolar pad for lower</td>
+        </tr>
+        <tr>
+          <td>Individual variation in porion–orbitale relationship to occlusal plane</td>
+          <td>Highly affected — documented 23° total scatter</td>
+          <td>Not affected</td>
+          <td>Always supplement FHP with HIP or Camper's verification</td>
+        </tr>
+        <tr>
+          <td>Head posture anomaly (torticollis, cervical deformity)</td>
+          <td>Significantly affected — FHP relies on natural head position</td>
+          <td>Not affected — intraoral measurement independent of posture</td>
+          <td>HIP plane preferred; verify with bipupillary line</td>
+        </tr>
+        <tr>
+          <td>Edentulous with severe atrophy (Cawood Class V–VI)</td>
+          <td>Not affected</td>
+          <td>Minor — incisive papilla may be less defined; hamular notches remain palpable</td>
+          <td>Both methods valid; confirm with neutral zone technique</td>
+        </tr>
+        <tr>
+          <td>Operator inexperience with face-bow</td>
+          <td>Major — technique-sensitive; errors in ear rod, orbitale pointer position</td>
+          <td>Minimal — landmarks are palpable and direct</td>
+          <td>HIP plane preferred for training environments</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The HIP Plane in Conventional Practice</h3>
+  <div class="mech-box">
+    <div class="mech-title">Step-by-Step — Conventional Rim Orientation</div>
+    <ol>
+      <li><strong>Identify the incisive papilla</strong> on the maxillary cast and mark its center with a pencil.</li>
+      <li><strong>Identify both hamular notches</strong> on the cast, bilaterally at the posterior border of the maxillary ridge, and mark them with a pencil.</li>
+      <li><strong>Recognize the HIP landmarks on the cast</strong> — in conventional practice, marking the incisive papilla and hamular notches on the cast served mainly to help the clinician or technician become familiar with the maxillary arch anatomy and its proportions, rather than to drive a mechanically precise rim orientation. <em>This desktop landmark-recognition step is the foundation that the Saleh Method builds on, by transferring these same landmarks to the surveyor for mechanical tripoding (see following section).</em></li>
+      <li><strong>Trim the upper rim</strong> to sit at the correct incisal edge level (approximately 1–2 mm below the upper lip at rest, or as determined by the patient's original photos or phonetic tests), set chairside on the patient.</li>
+    </ol>
+  </div>
+
+  <div class="compare-box">
+    <div class="cmp-title">The Bottom Line: Frankfort vs. HIP</div>
+    <p style="font-family:var(--sans); font-size:0.91rem; color:var(--text); line-height:1.65; margin-bottom:12px;">The <strong style="color:var(--blue)">Frankfort Horizontal Plane</strong> is an externally-derived, skull-base reference ideal for articulator mounting and cephalometric analysis. It is an <em>indirect approximation</em> of the maxillary occlusal plane — and significant individual anatomical scatter means it can deviate substantially from the true occlusal plane on any given patient. It requires a face-bow and introduces operator-dependent error in the ear rod placement.</p>
+    <p style="font-family:var(--sans); font-size:0.91rem; color:var(--text); line-height:1.65; margin-bottom:12px;">The <strong style="color:var(--gold)">HIP Plane</strong> is an internally-derived, intraoral reference that directly reconstructs the position of the maxillary occlusal plane using stable, resorption-resistant landmarks that are anatomically contiguous with the original tooth positions. It requires no face-bow, is operator-independent, and has superior accuracy documented in peer-reviewed literature.</p>
+    <p style="font-family:var(--sans); font-size:0.91rem; color:var(--text); line-height:1.65;"><strong style="color:var(--purple)">Modern consensus</strong>: Use the HIP Plane for initial occlusal rim orientation, established at the desktop stage via surveyor tripoding (the Saleh Method). Use the Frankfort Plane for articulator mounting and when performing detailed condylar path analysis. Cross-verify with Camper's plane and the bipupillary line at the chairside appointment. No single plane should be used in isolation.</p>
+  </div>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield</div>
+    <div class="hy-body">
+      <ul>
+        <li>FHP was designed for <strong>anthropological skull measurement</strong>, not for denture fabrication — its use in prosthodontics is an adaptation with known limitations.</li>
+        <li>The HIP plane is parallel to the occlusal plane in <strong>88–95%</strong> of patients; FHP is parallel in only <strong>54–62%</strong> — a clinically significant difference.</li>
+        <li>The <strong>mechanical porion</strong> (ear rod) deviates from anatomical porion by up to 13 mm — this introduces a systematic anterior tilt to the FHP transfer.</li>
+        <li>HIP plane is the <strong>superior choice for edentulous patients</strong> without prior maxillary surgery or anatomical distortion of the landmarks.</li>
+        <li>Always cross-verify any single plane with at least one other reference method.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3B: THE SALEH METHOD -->
+<div class="section" id="s3b">
+  <div style="font-family:Georgia,serif;font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#f0c96a;margin-bottom:6px;">Novel Technique — Original Contribution</div>
+  <h2 style="color:#f0e6c8;">Desktop HIP Plane Occlusal Rim Orientation — <span style="color:#d4a843;">The Saleh Method</span></h2>
+
+  <div style="background:#1a2a1a;border:2px solid #4ade80;border-radius:10px;padding:22px 26px;margin-bottom:28px;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#4ade80;margin-bottom:10px;">Author Attribution</div>
+    <p style="font-family:Georgia,serif;font-size:0.93rem;color:#e6edf3;line-height:1.7;margin:0;">The following technique is a <strong style="color:#f0c96a;">novel method</strong> conceived and developed by <strong style="color:#f0c96a;">M. Y. Saleh, B.D.S., D.D.S.</strong> It represents an original clinical innovation in the laboratory-based determination of the maxillary occlusal plane, eliminating the need for chairside Fox plane adjustment and face-bow transfer by applying the precision mechanics of the dental surveyor to HIP plane tripoding on the study cast.</p>
+  </div>
+
+  <h3>Conceptual Foundation</h3>
+  <p>All conventional methods of occlusal plane orientation — the Fox plane indicator, Camper's plane, and face-bow transfer — are performed <strong>chairside</strong>, with the patient present, and depend on operator visual estimation against facial landmarks. They are subject to patient movement, soft tissue variation, operator parallax, and inherent imprecision of extraoral landmark identification.</p>
+  <p>The Saleh Method departs fundamentally from this paradigm. It relocates the entire process of occlusal plane determination to the <strong>dental laboratory</strong>, performed on the maxillary cast using the dental surveyor — an instrument designed to establish and replicate precise geometric relationships on dental casts with mechanical exactitude.</p>
+
+  <div style="background:#1e1a2a;border-left:4px solid #c084fc;border-radius:0 8px 8px 0;padding:18px 22px;margin:22px 0;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#c084fc;margin-bottom:10px;">Core Principle</div>
+    <p style="font-family:Georgia,serif;font-size:0.92rem;color:#e6edf3;line-height:1.65;margin:0;">The dental surveyor table is the most precise horizontal reference surface available in any dental laboratory. When a cast is tripoded — using the <strong>analyzing rod</strong> to simultaneously contact all three HIP landmarks — the surveyor base <em>becomes</em> the HIP plane. The attachment is then switched to the <strong>undercut gauge</strong>, which scribes true horizontal lines on the wax rim as the table rotates. By geometric necessity, every scribed line is parallel to the HIP plane. No estimation. No face-bow. No Fox plane. Pure mechanical geometry.</p>
+  </div>
+
+  <h3>Understanding Tripoding — The Mechanical Basis</h3>
+  <p>Tripoding is a technique borrowed from removable partial denture design, exploiting the fundamental geometric principle that <strong>three non-collinear points define exactly one plane</strong>. The dental surveyor can mechanically verify this: the analyzing rod moves only vertically (it never tilts), while the cast sits on a table that can be tilted in any direction. By tilting the table until the fixed-height rod tip touches all three landmark points in turn — without changing the rod's height — the operator confirms that all three points sit at <strong>the same distance above the surveyor base</strong>. A plane connecting three such points is, by definition, parallel to the base — and the base is a true horizontal reference.</p>
+
+  <div style="background:#0d2a28;border-left:4px solid #2dd4bf;border-radius:0 8px 8px 0;padding:18px 22px;margin:22px 0;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#2dd4bf;margin-bottom:12px;">Tripoding — Step by Step</div>
+    <ol style="padding-left:20px;font-family:Georgia,serif;font-size:0.91rem;color:#e6edf3;line-height:1.65;">
+      <li style="margin-bottom:8px;">The dental surveyor vertical arm is fitted with the <strong>analyzing rod</strong> for the tripoding phase — it hangs freely and vertically, gravity-dependent, instrument-guaranteed.</li>
+      <li style="margin-bottom:8px;">The cast is placed on the surveyor table. The table can be tilted in any direction using its tilt mechanism.</li>
+      <li style="margin-bottom:8px;">Three HIP landmarks are identified on the cast. With the analyzing rod set at a fixed height, the table is tilted progressively — and the cast rotated beneath the rod tip — until the rod tip <strong>just touches all three landmarks</strong> without any further height adjustment. This means all three landmarks are at the <strong>same distance above the surveyor base</strong> — i.e., the same vertical height relative to the table.</li>
+      <li style="margin-bottom:8px;">At this moment, the plane defined by the three points is perfectly parallel to the surveyor base. The cast is now tripoded to the HIP plane.</li>
+      <li style="margin-bottom:0;">Three reference marks are scribed on the cast sides — allowing exact reproduction at any future time.</li>
+    </ol>
+  </div>
+
+  <h3>Clinical Protocol — The Saleh Method Step by Step</h3>
+  <div style="background:#0d2a28;border-left:4px solid #2dd4bf;border-radius:0 8px 8px 0;padding:20px 26px;margin:18px 0 24px;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#2dd4bf;margin-bottom:14px;">Full Protocol</div>
+    <ol style="padding-left:20px;font-family:Georgia,serif;font-size:0.92rem;color:#e6edf3;line-height:1.7;">
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Landmark Identification.</strong> Mark the incisive papilla center and bilateral hamular notches on the maxillary cast with a sharp pencil.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Mount the Cast.</strong> Place the maxillary cast with baseplate and wax rim on the surveyor table. Fit the <strong>analyzing rod</strong> to the vertical arm for the tripoding phase — it hangs freely vertical under gravity, ensuring a true perpendicular reference.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Tripod the HIP Plane.</strong> Tilt the surveyor table while lowering the vertical arm until the <strong>analyzing rod</strong> contacts all three HIP landmarks simultaneously. This is the tripod moment — the surveyor base is now mechanically parallel to the HIP plane. Do not move the table tilt after this point.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Record the Tripod.</strong> With the table locked in the tripoded position, use the tip of the analyzing rod (or carbon marker) to scribe three small reference lines directly on the <strong>palatal surface of the cast</strong> — one immediately adjacent to the incisive papilla, and one beside each hamular notch. Because all three HIP landmarks lie close together on the palate, these three reference lines fall within a single field of view: the operator can look down at the palatal surface and visually confirm all three lines are simultaneously level, without having to walk around the cast or check multiple sides separately. This is a practical advantage over scribing marks on the outer perimeter walls of the cast base, where the three marks are spread around the circumference and cannot be viewed together. If the cast is ever removed from the surveyor and needs to be repositioned — for a remake, a correction, or independent reproduction by a technician — the table is simply re-tilted until the analyzing rod tip realigns with all three palatal reference lines at the same height, simultaneously visible. This exactly reproduces the original HIP-tripoded orientation without needing to re-identify or re-tripod the original HIP landmarks.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Set the Scribing Height.</strong> Lower the attachment to the level of the wax occlusal rim. The anterior height is pre-set based on clinical lip measurement or literature-based anterior determinants.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Scribe the Horizontal Lines.</strong> Switch the attachment from the analyzing rod to the <strong>undercut gauge</strong>. Lower it to the surface of the wax rim. Rotate the surveyor table through a full arc — the undercut gauge scribes a true horizontal line on both the buccal and lingual surfaces of the wax rim. Lower the arm 2–3 mm and repeat, producing a series of mechanically precise parallel reference lines across the full rim height.</li>
+      <li style="margin-bottom:12px;"><strong style="color:#f0c96a;">Trim the Rim.</strong> Identify the target scribed line corresponding to the correct occlusal plane height. Melt and re-level the wax rim surface to this line using a heated wax knife. The rim surface is now exactly parallel to the HIP plane.</li>
+      <li style="margin-bottom:0;"><strong style="color:#f0c96a;">Chairside Verification.</strong> At the patient appointment, the pre-oriented rim is seated. Minor adjustments for lip support and phonetic confirmation complete the procedure.</li>
+    </ol>
+  </div>
+
+  <h3>Lower Rim — Supplementary Desktop Protocol</h3>
+  <div style="background:#2a1010;border-left:4px solid #f87171;border-radius:0 8px 8px 0;padding:18px 22px;margin:18px 0;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#f87171;margin-bottom:12px;">Posterior Lower Rim — Retromolar Pad</div>
+    <p style="font-family:Georgia,serif;font-size:0.91rem;color:#e6edf3;line-height:1.65;margin:0;">The posterior lower rim is set to the upper one-third of the retromolar pad — the most reproducible posterior landmark for the mandibular occlusal plane (Boucher 1951; Engelmeier 1996). The retromolar pad does not resorb with the alveolar ridge and remains a reliable desktop reference.</p>
+  </div>
+  <div style="background:#2a1010;border-left:4px solid #f87171;border-radius:0 8px 8px 0;padding:18px 22px;margin:18px 0;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#f87171;margin-bottom:12px;">Anterior Lower Rim — The Clinical Challenge</div>
+    <p style="font-family:Georgia,serif;font-size:0.91rem;color:#e6edf3;line-height:1.65;margin-bottom:12px;">The anterior lower incisal edge height is the most variable determinant. The following literature references guide pre-appointment setting:</p>
+    <ul style="padding-left:20px;font-family:Georgia,serif;font-size:0.91rem;color:#e6edf3;line-height:1.65;">
+      <li style="margin-bottom:8px;"><strong style="color:#f0c96a;">Lower lip line (Pound 1951):</strong> Incisal edges align with the lower lip vermilion border at rest.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#f0c96a;">Phonetic speaking space (Silverman 1953):</strong> /s/ phoneme produces 1-2 mm closest speaking space — gold standard chairside verification.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#f0c96a;">Two-thirds rule (Ortman 1960):</strong> Incisal edge at two-thirds the height of the lower alveolar ridge from vestibular depth — a simple desktop proportional guide.</li>
+      <li style="margin-bottom:0;"><strong style="color:#f0c96a;">Tallgren cephalometric data (1972):</strong> Lower incisal edge averages 40-42 mm from the mandibular symphysis when cephalograms are available.</li>
+    </ul>
+  </div>
+
+  <div style="background:#2a2010;border-left:4px solid #d4a843;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;">
+    <div style="font-family:Georgia,serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#d4a843;margin-bottom:8px;">Clinical Pearl</div>
+    <p style="font-family:Georgia,serif;font-size:0.91rem;color:#e6edf3;line-height:1.65;margin:0;">The Saleh Method does not claim to eliminate all chairside adjustment. It eliminates the primary source of error — visual, patient-dependent chairside estimation of the HIP plane. The clinician arrives at the appointment verifying a mechanically correct plane rather than constructing one from scratch. This is the technique's defining clinical value.</p>
+  </div>
+
+  <div style="display:block;background:#2a1010;border-left:4px solid #f87171;border-radius:0 6px 6px 0;padding:14px 18px;margin:20px 0 28px;">
+    <div style="display:inline-block;font-family:Georgia,serif;font-weight:700;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:#f87171;background:#3a1818;padding:3px 8px;border-radius:3px;margin-bottom:8px;">High Yield — The Saleh Method</div>
+    <div style="font-family:Georgia,serif;font-size:0.93rem;color:#e6edf3;line-height:1.65;">
+      <ul style="margin:6px 0 0;padding-left:18px;">
+        <li style="margin-bottom:6px;">Platform: <strong style="color:#f0c96a;">dental surveyor table</strong> — not the articulator, not the patient's mouth</li>
+        <li style="margin-bottom:6px;"><strong style="color:#f0c96a;">Tripoding</strong> the incisive papilla and bilateral hamular notches mechanically defines the HIP plane with zero visual estimation</li>
+        <li style="margin-bottom:6px;"><strong style="color:#f0c96a;">Analyzing rod</strong> — used during tripoding to contact all three HIP landmarks simultaneously. Then switched to the <strong style="color:#f0c96a;">undercut gauge</strong>, which scribes true horizontal lines on the wax rim at 2–3 mm increments by table rotation</li>
+        <li style="margin-bottom:6px;"><strong style="color:#f0c96a;">No face-bow required</strong> — Frankfort plane transfer bypassed entirely</li>
+        <li style="margin-bottom:6px;">Ideal for <strong style="color:#f0c96a;">anxious, gagging, or medically compromised patients</strong> — all critical work completed in the laboratory</li>
+        <li style="margin-bottom:6px;">Lower posterior rim: <strong style="color:#f0c96a;">upper one-third retromolar pad</strong>. Lower anterior rim: chairside phonetic verification</li>
+        <li style="margin-bottom:6px;">The tripod orientation is <strong style="color:#f0c96a;">recorded via three reference lines on the palatal surface</strong> — beside the incisive papilla and each hamular notch, all simultaneously visible — allowing the exact HIP-tripoded position to be reproduced at any future time without re-identifying the original landmarks</li>
+        <li style="margin-bottom:0;">Developed by <strong style="color:#f0c96a;">M. Y. Saleh, B.D.S., D.D.S.</strong> — novel original contribution to complete denture laboratory technique</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: OCCLUSAL PLANE -->
+<div class="section" id="s4">
+  <div class="section-label">Section 4</div>
+  <h2>Occlusal Plane Orientation and Establishment</h2>
+
+  <p>The <strong>occlusal plane</strong> is defined as the average plane formed by the incisal and occlusal surfaces of the teeth. In complete denture fabrication, it must be reconstructed from scratch using anthropometric references. Errors in occlusal plane orientation directly cause esthetic problems, phonetic disturbances, unbalanced occlusion, and accelerated ridge resorption.</p>
+
+  <h3>The Correct Occlusal Plane — Three Key Criteria</h3>
+  <ol>
+    <li><strong>Parallel to the Frankfort Horizontal Plane</strong> (extraoral check via face-bow transfer)</li>
+    <li><strong>Parallel to the HIP Plane</strong> (desktop check via surveyor tripoding — the Saleh Method)</li>
+    <li><strong>Parallel to the bipupillary line</strong> (frontal symmetry check)</li>
+  </ol>
+
+  <h3>Anterior Occlusal Plane Level</h3>
+  <p>The <strong>height of the anterior occlusal plane</strong> is determined by the upper incisal edge position. This is set at the level where:</p>
+  <ul>
+    <li>The upper lip at rest shows <strong>1–2 mm of incisal edge</strong> (varies with age — younger patients show more tooth, older patients less)</li>
+    <li>The incisal edge aligns with or just below the lower border of the upper lip at rest</li>
+    <li>Phonetic testing confirms correct tooth position (see Section 7)</li>
+  </ul>
+
+  <h3>Posterior Occlusal Plane — Mandibular Reference</h3>
+  <p>The posterior extent of the lower occlusal plane is established by the <strong>retromolar pad rule</strong>: the occlusal surfaces of the lower posterior teeth should be at the level of the <strong>junction of the lower and middle thirds of the retromolar pad</strong>. Some authorities cite the upper one-third of the retromolar pad — the clinician should note that this refers to the upper one-third of the entire pad height, equivalent to the junction of lower and middle thirds.</p>
+
+
+  <h3>Residual Ridge Classification — Cawood and Howell (1988)</h3>
+  <p>Cawood and Howell (1988) proposed their classification system for edentulous jaws based on a study of 300 dried skulls. Their six-class system describes the progressive resorption of the alveolar process following tooth loss and is the most widely used classification in complete denture prosthodontics. Understanding where a patient falls in this classification directly affects occlusal plane determination, impression technique, denture design, and tooth arrangement strategy.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Ridge Description</th>
+          <th>Cross-Section Shape</th>
+          <th>Clinical Implications for Complete Dentures</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Class I</td>
+          <td>Dentate — teeth present</td>
+          <td>Full alveolar height</td>
+          <td>Pre-extraction planning stage; record pre-extraction measurements, photographs, and existing VDO</td>
+        </tr>
+        <tr>
+          <td>Class II</td>
+          <td>Immediately post-extraction — socket still present</td>
+          <td>Irregular crest</td>
+          <td>Immediate denture territory; occlusal plane set to pre-extraction position. Significant remodeling will occur — reline planned at 3–6 months</td>
+        </tr>
+        <tr>
+          <td>Class III</td>
+          <td>Well-rounded ridge — adequate height and width</td>
+          <td>Rounded, broad crest</td>
+          <td>Ideal denture-bearing foundation. Occlusal plane roughly coincides with ridge crest level. Standard impression and occlusal rim techniques applicable. Best prognosis for denture stability</td>
+        </tr>
+        <tr>
+          <td>Class IV</td>
+          <td>Knife-edge ridge — adequate height but insufficient width</td>
+          <td>Sharp, narrow crest</td>
+          <td>Reduced support area. Ridge crest is sharp and pressure-sensitive. Occlusal plane now sits above the crest. Mental foramen may approach the crest in the mandible — must be identified on panoramic radiograph and relieved in the denture base. Soft liner or special impression technique may be required</td>
+        </tr>
+        <tr>
+          <td>Class V</td>
+          <td>Flat ridge — inadequate height and width</td>
+          <td>Flat, featureless</td>
+          <td>Severely compromised support and retention. This condition leads to decreased area of the ridge, and the flat ridge condition is associated with increased stress distribution in the mucosa under masticatory load. Occlusal plane significantly above the ridge crest. Mental nerve may lie at the surface — relief essential. Neutral zone technique strongly recommended for lower denture. Implant overdenture should be discussed</td>
+        </tr>
+        <tr>
+          <td>Class VI</td>
+          <td>Depressed ridge — ridge below the floor of the mouth or vestibule level</td>
+          <td>Concave / inverted</td>
+          <td>Most challenging category. Consequences include reduced depth and width of the vestibule and sulcus, muscle attachments closer to the crest, loss of vertical dimension, reduced lower facial proportions, and anterior rotation of the mandible — producing a visually prognathic profile. Occlusal plane relationship to ridge crest is no longer meaningful. All landmarks must be derived from retromolar pad, incisal edge phonetics, and the Saleh Method HIP tripoding on the cast. Implant overdenture is the treatment of choice</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pearl">
+    <div class="pearl-label">Clinical Pearl — Cawood–Howell and Occlusal Plane Height</div>
+    <p>In Class III ridges the occlusal plane roughly coincides with the ridge crest — familiar and predictable. In Class IV (knife-edge) lower ridges the mental nerve may have migrated superiorly toward the crest — the occlusal plane now sits significantly above the ridge and the mental foramen region must be identified radiographically and relieved in the denture base. In Class V–VI ridges the occlusal plane relationship to the ridge crest is no longer clinically meaningful — always determine occlusal plane height exclusively from the <strong>retromolar pad</strong> posteriorly and the <strong>incisal edge phonetic position</strong> anteriorly. Never use the ridge crest as the occlusal plane guide in Class IV or above.</p>
+  </div>
+
+  <h3>Ridge Relationship and Angle's Classification — Predicting Tooth Arrangement from the Mounted Casts</h3>
+  <p>Once the upper and lower casts are mounted on the articulator in centric relation at the established VDO, the <strong>inter-ridge relationship</strong> is immediately visible. This relationship is the edentulous equivalent of Angle's classification and directly predicts the tooth arrangement strategy required. In the completely edentulous patient, Angle's jaw classification can be determined by clinical examination and by analysis of the mounted casts — Class I (normal/orthognathic), Class II (protruded maxilla / retrognathic mandible), or Class III (protruded mandible / prognathic).</p>
+
+  <p>Goyal and Bhargava (1974) established that the maxillary and mandibular ridges are normally correlated when, in centric relation, the anterior segment of the upper ridge is slightly labial to the lower ridge. Any deviation in the anterior or posterior region from this ridge relationship is considered abnormal — Class II or Class III ridge relationship.</p>
+
+  <div class="info-box">
+    <div class="ib-label">Key Principle</div>
+    <p>The mounted edentulous casts do not tell you where the teeth were — they tell you where the <strong>skeletal bases</strong> are. The ridge relationship predicts Angle's skeletal classification, which in turn dictates the tooth arrangement strategy. A patient with a Class III ridge relationship on mounted casts does not necessarily become a Class III occlusal arrangement — the clinician must decide how much of the skeletal discrepancy can be compensated by tooth position and how much must be accepted as a cross-bite or modified arrangement.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Ridge Relationship (Mounted Casts)</th>
+          <th>Skeletal Equivalent</th>
+          <th>Tooth Arrangement Strategy</th>
+          <th>Key Considerations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Class I</strong><br>Upper ridge slightly anterior to lower ridge anteriorly; ridges roughly parallel posteriorly</td>
+          <td>Angle Class I — orthognathic / normal</td>
+          <td>Standard anatomic arrangement. Upper anterior teeth set 8–10 mm anterior to incisive papilla. Posterior teeth set in Class I cusp-fossa relationship — upper buccal cusps occlude in lower central fossae</td>
+          <td>Class I (orthognathic) ridge relationship is the most common, found in approximately 87% of edentulous subjects. Standard techniques apply. Best esthetic and functional prognosis</td>
+        </tr>
+        <tr>
+          <td><strong>Class II Division 1</strong><br>Upper ridge significantly anterior to lower ridge; lower ridge retrognathic; excessive overjet visible on mounted casts</td>
+          <td>Angle Class II Div 1 — mandibular retrognathism; proclined upper anteriors</td>
+          <td>Upper anterior teeth may need to be set slightly more posteriorly than the 8–10 mm rule to avoid excessive overjet. Posterior teeth arranged in Class II relationship with upper second premolar occluding between lower first and second premolars. Four basic concepts apply: centric relation as reference position; posterior teeth positioned close to former positions; freedom in eccentric movements; and multiple occlusal contacts in centric and eccentric positions.</td>
+          <td>Risk of anterior instability if upper anteriors are set too far labially. Lower denture stability compromised by retrognathic ridge position. Consider lingualized occlusion or monoplane occlusion for very resorbed ridges</td>
+        </tr>
+        <tr>
+          <td><strong>Class II Division 2</strong><br>Upper ridge anterior to lower; retroclination of upper anterior region; deep curve of Spee typically present</td>
+          <td>Angle Class II Div 2 — mandibular retrognathism; retroclined upper anteriors; deep overbite tendency</td>
+          <td>Upper anteriors set with reduced labial inclination. Overbite controlled to avoid deep bite — aim for edge-to-edge or minimal vertical overlap. Posterior teeth in Class II relationship. Curve of Spee must be carefully controlled to avoid posterior interference in protrusion</td>
+          <td>Deep overbite tendency can cause anterior instability of lower denture. Monitor VDO carefully — these patients often present with over-closure. Phonetics critical: /s/ test will reveal if VDO is correct</td>
+        </tr>
+        <tr>
+          <td><strong>Class III</strong><br>Lower ridge anterior to or level with upper ridge; mandible appears prognathic on mounted casts</td>
+          <td>Angle Class III — mandibular prognathism; reverse overjet tendency</td>
+          <td>There are many ways to address a Class III jaw relation. Options include cross-bite tooth setting, removal of one tooth to adjust space, or an artificial dentition cross-arch configuration. Posterior teeth typically arranged in reverse cusp-fossa relationship or with flat/monoplane occlusion. Anterior teeth set in edge-to-edge or slight reverse overjet if skeletal discrepancy is mild; full cross-bite arrangement if severe</td>
+          <td>Advanced resorption produces anterior rotation of the mandible, giving a visually prognathic appearance even in patients who were not originally Class III. Always distinguish true skeletal Class III from pseudo-Class III (apparent prognathism due to loss of VDO and ridge resorption). Restoring VDO to the correct level may partially correct the apparent Class III relationship. Centric relation record is critical — habitual posturing forward is common in long-term edentulous Class III patients</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield — Ridge Relationship and Angle's Classification</div>
+    <div class="hy-body">
+      <ul>
+        <li>Mounted edentulous casts in centric relation reveal the <strong>skeletal inter-ridge relationship</strong> — the prosthodontic equivalent of Angle's classification</li>
+        <li><strong>Class I ridge relationship</strong> — most common (~87% of edentulous patients); standard tooth arrangement applies</li>
+        <li><strong>Class II ridge relationship</strong> — upper ridge anterior; risk of excessive overjet; posterior teeth arranged in Class II relationship; lingualized or monoplane occlusion preferred in resorbed cases</li>
+        <li><strong>Class III ridge relationship</strong> — distinguish true skeletal Class III from <strong>pseudo-Class III</strong> (overclosure + mandibular rotation from ridge resorption); always restore VDO first and re-evaluate before committing to cross-bite arrangement</li>
+        <li><strong>Cawood–Howell Class V–VI</strong> patients may present with apparent Class III relationship purely due to anterior mandibular rotation from severe resorption — this is a clinical trap; correct VDO before diagnosing ridge relationship</li>
+        <li>The <strong>retromolar pad</strong> remains the definitive posterior occlusal plane reference regardless of ridge class — it does not change with resorption</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Camper's Plane — Practical Use</h3>
+  <div class="mech-box">
+    <div class="mech-title">Fox Plane Indicator Technique (Camper's Plane Check)</div>
+    <ol>
+      <li>The upper occlusal rim arrives at the appointment with its posterior surface already trimmed to the HIP plane, established at the desktop stage via surveyor tripoding (the Saleh Method).</li>
+      <li>Place the <strong>Fox occlusal plane indicator</strong> on the upper rim. The anterior bar projects extraorally; the posterior wings lie over the posterior rim.</li>
+      <li>From the front: anterior bar should be <strong>parallel to the bipupillary line</strong> (rule out lateral tilt).</li>
+      <li>From the side: posterior wings should be <strong>parallel to the ala-tragus line</strong> (Camper's plane check).</li>
+      <li>Discrepancy &gt;3–4° from Camper's plane warrants re-examination of HIP landmark identification.</li>
+      <li>If all three planes agree → proceed to VDO determination.</li>
+    </ol>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Occlusal Plane Error</th>
+          <th>Consequence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Plane tilted downward anteriorly (too steep)</td>
+          <td>Excessive tooth display, poor esthetics, anterior interferences in protrusion, sibilant distortion</td>
+        </tr>
+        <tr>
+          <td>Plane tilted upward anteriorly (too flat)</td>
+          <td>Insufficient tooth display, "sunken" appearance, difficulty with anterior guidance establishment</td>
+        </tr>
+        <tr>
+          <td>Unilateral lateral tilt</td>
+          <td>Unilateral occlusal contacts, lateral instability, asymmetric esthetics, crossbite tendency</td>
+        </tr>
+        <tr>
+          <td>Plane set too high (absolute height)</td>
+          <td>Posterior teeth block lower jaw movement, reduced interocclusal clearance, sore spots over mental nerve</td>
+        </tr>
+        <tr>
+          <td>Plane set too low</td>
+          <td>Inadequate support for lower lip, poor phonetics, unaesthetic appearance</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 5: VDO -->
+<div class="section" id="s5">
+  <div class="section-label">Section 5</div>
+  <h2>Vertical Dimension of Occlusion (VDO) — Measurements and Methods</h2>
+
+  <p>The <strong>vertical dimension of occlusion (VDO)</strong> is the height of the lower face when the teeth (or occlusal rims) are in maximum intercuspation. It is one of the most critical measurements in complete denture fabrication — both over-closure and over-opening cause functional, phonetic, and structural problems.</p>
+
+  <h3>Physiologic Rest Position (PRP)</h3>
+  <p>The mandible's <strong>physiologic rest position</strong> is the postural position adopted when the muscles of mastication are in a state of minimal tonic activity. At this position, the upper and lower teeth are separated by the <strong>interocclusal distance (freeway space)</strong> — typically <strong>2–4 mm</strong> at the first premolar region.</p>
+  <p><strong>VDO = Vertical Dimension of Rest (VDR) − Freeway Space</strong></p>
+  <p>Normal freeway space: <strong>2–4 mm</strong> (mean 3 mm). Values below 1 mm suggest over-opening; values above 6 mm suggest over-closure.</p>
+
+  <h3>Methods for Determining VDO</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+          <th>Landmarks Used</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Willis Gauge (Facial Measurement)</td>
+          <td>Measures nose–chin distance in occlusion and compares to pupil–lip distance; these should be equal</td>
+          <td>Subnasale → Menton vs. Pupil → Commissure</td>
+          <td>Moderate — high inter-individual variation; useful as cross-check only</td>
+        </tr>
+        <tr>
+          <td>Pre-extraction records</td>
+          <td>Study models, old photographs, old dentures with known VDO, mounted diagnostic casts</td>
+          <td>Patient-specific records</td>
+          <td>High — best method when records exist</td>
+        </tr>
+        <tr>
+          <td>Phonetic method (sibilant test)</td>
+          <td>/s/ sound produced when teeth are at closest speaking space; VDO must allow 1–2 mm speaking space</td>
+          <td>Incisal edge position during /s/</td>
+          <td>High — directly measures functional occlusal vertical</td>
+        </tr>
+        <tr>
+          <td>Swallowing method</td>
+          <td>Patient swallows and mandible naturally comes to rest position; VDO set 2–3 mm below this</td>
+          <td>Postural rest position</td>
+          <td>Moderate — varies with head position, anxiety</td>
+        </tr>
+        <tr>
+          <td>Facial measurement proportions (facial thirds)</td>
+          <td>Lower face (subnasale–menton) should equal middle face (nasion–subnasale) when standardized</td>
+          <td>Nasion, Subnasale, Menton</td>
+          <td>Low–moderate — significant racial/age variation</td>
+        </tr>
+        <tr>
+          <td>Tactile sense / Boos Bimeter</td>
+          <td>Patient taps teeth together and identifies natural stopping point; measured with Bimeter device</td>
+          <td>Neuromuscular proprioception</td>
+          <td>Moderate — requires experienced operator interpretation</td>
+        </tr>
+        <tr>
+          <td>Ridge parallelism</td>
+          <td>Upper and lower ridges should be approximately parallel when at correct VDO; major divergence anteriorly or posteriorly suggests error</td>
+          <td>Ridge form analysis</td>
+          <td>Low — guide only, not a measurement technique</td>
+        </tr>
+        <tr>
+          <td>Electromyography (EMG)</td>
+          <td>Mandibular elevator activity minimal at rest; confirmed VDO with minimal EMG activity</td>
+          <td>Masseter/temporalis activity</td>
+          <td>High — research standard; rarely used in routine clinical practice</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield</div>
+    <div class="hy-body">
+      <ul>
+        <li><strong>Over-opening VDO</strong>: muscle fatigue, clicking dentures, gaunt appearance, over-eruption tendency, "sunken cheek" look eliminated but replaced by strained look.</li>
+        <li><strong>Over-closure</strong>: angular cheilitis, deep mentolabial fold, "witches chin" appearance, loss of lip support, phonetic errors (teeth contact during speech), accelerated ridge resorption.</li>
+        <li><strong>Always use at least two independent methods</strong> to confirm VDO — phonetic test + facial measurement is the standard clinical pair.</li>
+        <li>Freeway space of <strong>3 mm at the premolars</strong> is the classic target; verify it phonetically (the /s/ sound should create a 1–2 mm closest speaking space gap).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: TOOTH POSITION -->
+<div class="section" id="s6">
+  <div class="section-label">Section 6</div>
+  <h2>Anterior and Posterior Tooth Position — Anthropometric Guides</h2>
+
+  <h3>Upper Anterior Tooth Position</h3>
+
+  <div class="mech-box">
+    <div class="mech-title">Establishing Upper Anterior Tooth Position</div>
+    <ol>
+      <li><strong>Labiolingual position</strong>: The labial surface of the upper central incisors should be positioned approximately <strong>8–10 mm anterior to the center of the incisive papilla</strong>. This is the most reliable guide for restoring pre-extraction central incisor position.</li>
+      <li><strong>Vertical position (incisal edge)</strong>: The incisal edges should show <strong>1–2 mm below the relaxed upper lip</strong> at rest. This decreases with age — the average display is 3.5 mm in young adults, decreasing to near 0 in patients over 60.</li>
+      <li><strong>Midline</strong>: Must coincide with the facial midline (nasion–subnasale–menton line). The midline is more critical than individual tooth symmetry — a slightly asymmetric arrangement with a centered midline is preferable to a symmetric arrangement with a deviated midline.</li>
+      <li><strong>Canine position</strong>: The tip of the upper canine should align with the lateral border of the ala of the nose. The corners of the mouth (commissures) may also be used — the canine tip often aligns near the commissure in natural dentition.</li>
+      <li><strong>Philtrum guidance</strong>: The upper central incisors' mesial contact point should align with the base of the philtrum — a reliable midline secondary guide.</li>
+    </ol>
+  </div>
+
+  <h3>The 8–10 mm Incisive Papilla Rule — Detailed</h3>
+  <p>This rule is the most evidence-based single measurement in anterior tooth positioning. Studies by <strong>Watt & MacGregor, Martone, and Jacobson</strong> confirmed that the labial surface of the upper centrals sits between 8 and 12 mm anterior to the center of the incisive papilla in the vast majority of dentate subjects. The mean is approximately <strong>8–10 mm</strong>. This distance is not affected by ridge resorption because both the papilla and the alveolar crest change together (the papilla position is stable relative to the bony palate, but its surface visibility on the cast reflects any minor vertical changes). Clinically, <strong>mark the papilla center on the upper occlusal rim in wax</strong> and set the labial incisor surface 8–10 mm labial to this mark.</p>
+
+  <div class="pearl">
+    <div class="pearl-label">Clinical Pearl — Incisive Papilla Measurement Pitfall</div>
+    <p>In patients with severe maxillary ridge resorption, the incisive papilla may appear to move labially relative to the residual ridge crest — because the ridge resorbs labially/superiorly. The papilla itself has not moved; the ridge has resorbed away from beneath it. Always measure from the papilla center on the cast, not from the ridge crest, when using the 8–10 mm rule.</p>
+  </div>
+
+  <h3>Posterior Tooth Position</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Landmark</th>
+          <th>Guides Posterior Tooth Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Residual ridge crest (upper)</td>
+          <td>Upper posterior teeth should be positioned buccal to the ridge crest in Class I ridges; over the crest in Class II–III to optimize stability</td>
+        </tr>
+        <tr>
+          <td>Residual ridge crest (lower)</td>
+          <td>Lower posterior teeth ideally positioned over or lingual to the lower ridge crest — lingual positioning reduces tipping forces on the lower denture</td>
+        </tr>
+        <tr>
+          <td>Neutral zone</td>
+          <td>Space between the buccinator and tongue muscles where forces are balanced — the optimal location for lower posterior tooth position; determined by functional impression or neutral zone technique</td>
+        </tr>
+        <tr>
+          <td>Retromolar pad</td>
+          <td>Lower last molar distal cusp should end at or slightly anterior to the retromolar pad anterior border</td>
+        </tr>
+        <tr>
+          <td>Hamular notch level</td>
+          <td>Upper last molar should end at or just anterior to the hamular notch projection</td>
+        </tr>
+        <tr>
+          <td>Buccal corridor</td>
+          <td>Upper premolar buccal surface should be positioned to maintain a natural buccal corridor (gap between posterior teeth and commissure); over-expansion looks unnatural</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The Neutral Zone Concept</h3>
+  <p>The <strong>neutral zone</strong> is the potential space between the lips and cheeks buccally and the tongue lingually, in which the forces of the cheek and tongue musculature are in equilibrium. Posterior teeth placed within the neutral zone receive balanced muscular forces from both sides, minimizing dislodgement forces on the denture. The neutral zone is determined either by muscular function (neutral zone impression technique using tissue conditioner or zinc oxide paste) or estimated from ridge anatomy and muscle attachment positions.</p>
+
+  <div class="info-box">
+    <div class="ib-label">Key Measurement Reference</div>
+    <p>The <strong>arch width</strong> at the level of the upper first molar (intermolar width) averages <strong>49–53 mm</strong> in adult females and <strong>51–55 mm</strong> in adult males. The mandibular intermolar width averages <strong>44–49 mm</strong>. These values guide tooth selection width when pre-extraction records are unavailable.</p>
+  </div>
+</div>
+
+<!-- SECTION 7: PHONETICS -->
+<div class="section" id="s7">
+  <div class="section-label">Section 7 — Critical Integration</div>
+  <h2>Phonetics in Complete Denture Fabrication</h2>
+
+  <p>Phonetic assessment is both a <strong>diagnostic tool</strong> and a <strong>clinical measurement technique</strong>. It provides real-time functional feedback on tooth position, VDO, and palatal contour — information that no static measurement can replicate. Every phoneme tests a different aspect of denture design.</p>
+
+  <h3>The Foundation: Speech and Denture Interaction</h3>
+  <p>Speech is produced by coordinated movements of the lips, tongue, teeth, and palate. The denture replaces three of these four structures (teeth, palate, alveolus) — meaning every phoneme that involves contact with the upper anterior teeth, the palate, or the ridge is directly sensitive to denture design errors. Phonetic assessment should be performed with the <strong>trial dentures (wax try-in)</strong> and re-verified at delivery.</p>
+
+  <h3>Phoneme-by-Phoneme Analysis</h3>
+  <div class="table-wrap phoneme-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Phoneme(s)</th>
+          <th>Sound Type</th>
+          <th>Articulatory Contact</th>
+          <th>What It Tests in the Denture</th>
+          <th>Error Interpretation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>/f/, /v/</strong></td>
+          <td>Labiodental fricatives</td>
+          <td>Inner (wet-dry junction) of lower lip contacts incisal edges of upper central incisors</td>
+          <td><strong>Upper incisal edge vertical position</strong>; labiolingual position of upper anteriors</td>
+          <td>If lip must strain upward: incisors too long or too high. If no contact: incisors too short or set too far posterior. "F" requires light contact, "V" is voiced equivalent — both test the same position.</td>
+        </tr>
+        <tr>
+          <td><strong>/s/, /z/</strong></td>
+          <td>Sibilant fricatives</td>
+          <td>Tongue tip approaches maxillary anterior teeth or palate; upper and lower incisors reach their closest position (1–2 mm gap — the "closest speaking space")</td>
+          <td><strong>VDO accuracy; closest speaking space</strong>; incisal overjet; palatal contour</td>
+          <td>Whistling or lispy /s/: VDO over-opened or teeth too far anteriorly placed. Muffled /s/: VDO over-closed or teeth too far posteriorly placed. "Sibilant /s/" test is the gold standard phonetic check for VDO.</td>
+        </tr>
+        <tr>
+          <td><strong>/th/ (θ, ð)</strong></td>
+          <td>Linguodental fricatives</td>
+          <td>Tongue tip protrudes between upper and lower incisal edges</td>
+          <td><strong>Incisal overjet and overbite</strong>; presence of excessive vertical overlap</td>
+          <td>If tongue cannot protrude: teeth set with excessive vertical overlap or excessive lingual inclination of lower anteriors. The interdental /th/ confirms adequate anterior spacing for natural tongue protrusion.</td>
+        </tr>
+        <tr>
+          <td><strong>/m/, /b/, /p/</strong></td>
+          <td>Bilabial stops/nasals</td>
+          <td>Both lips contact; /m/ tests lip closure at rest position</td>
+          <td><strong>Lip fullness, VDO (rest position)</strong>; lip support provided by anterior teeth and denture flange</td>
+          <td>If lips cannot close comfortably: denture flange over-extended, anterior teeth too far forward, or VDO over-opened. A natural "mmm" brings the mandible to rest position — used in phonetic VDO method.</td>
+        </tr>
+        <tr>
+          <td><strong>/t/, /d/, /n/, /l/</strong></td>
+          <td>Linguoalveolar stops/nasals/lateral</td>
+          <td>Tongue tip contacts the palatal surface of the upper anterior teeth and alveolar ridge junction</td>
+          <td><strong>Palatal contour; anterior tooth inclination; ridge form reproduction</strong></td>
+          <td>Over-contoured palatal flanges or a bulky lingual shelf of upper anterior teeth produces a thick, distorted /t/ or /d/. The lingual contour of the upper anterior teeth must replicate the pre-extraction anatomy.</td>
+        </tr>
+        <tr>
+          <td><strong>/k/, /g/, /ng/</strong></td>
+          <td>Linguopalatal / velar stops</td>
+          <td>Tongue dorsum contacts the hard or soft palate at the posterior one-third</td>
+          <td><strong>Posterior palatal contour</strong>; palatal height; posterior seal area</td>
+          <td>Distorted /k/ or /g/ may indicate an excessively thick posterior palatal region in the denture, or a posteriorly placed post-dam that interferes with tongue elevation.</td>
+        </tr>
+        <tr>
+          <td><strong>"sixty-six", "Mississippi"</strong></td>
+          <td>Sibilant stress words</td>
+          <td>Repeated /s/ and /ks/ clusters</td>
+          <td><strong>Comprehensive sibilant stress test</strong> for VDO and anterior tooth position</td>
+          <td>Most demanding phonetic test. If patient can say "sixty-six" clearly, /s/ position and VDO are acceptable. If any whistling, clicking, or distortion occurs, re-evaluate incisal position and speaking space.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The Phonetic VDO Method — Step by Step</h3>
+  <div class="mech-box">
+    <div class="mech-title">Phonetic Determination of Vertical Dimension of Occlusion</div>
+    <ol>
+      <li>Place the occlusal rims in the patient's mouth with provisional VDO set by facial measurements.</li>
+      <li>Ask the patient to say <strong>"Emma"</strong> or <strong>"mmm"</strong> repeatedly and naturally — this brings the mandible to the <strong>physiologic rest position</strong>. Measure this height (VDR).</li>
+      <li>Ask the patient to say <strong>"sixty-six"</strong> or <strong>"Mississippi"</strong>. At the moment of sibilant /s/ production, the teeth are at the <strong>closest speaking space</strong>. Measure the lower face height — this is VDO + 1–2 mm. If the rims touch or click during speech: VDO is too high (over-opened). If the speaking space exceeds 4–5 mm: VDO is too low (over-closed).</li>
+      <li>Verify that <strong>VDR − VDO = 2–4 mm</strong> (the freeway space). Adjust the VDO to satisfy this criterion.</li>
+      <li>Check /f/ and /v/ for upper incisal edge position — if these are correct, the anterior vertical is confirmed.</li>
+      <li>Check /th/ for overjet and vertical overlap — confirms anterior tooth placement in three dimensions.</li>
+    </ol>
+  </div>
+
+  <div class="pearl">
+    <div class="pearl-label">Clinical Pearl — Denture "Clicking" During Speech</div>
+    <p>Audible denture clicking during speech is a cardinal sign of <strong>over-opened VDO</strong>. The teeth are set too far apart at rest, so the closest speaking space forces them into contact. This is both aesthetically unacceptable and functionally destructive — the repeated impacts accelerate ridge resorption, fracture acrylic, and cause TMJ loading. Reduce VDO in 1 mm increments and re-test phonetically.</p>
+  </div>
+
+  <h3>Palatal Contour and Phonetics</h3>
+  <p>The palatal contour of the upper complete denture directly replicates (or distorts) the phonetic function of the palate. The natural palate has a <strong>rugae zone</strong> in the anterior one-third, a <strong>smooth mid-palatal vault</strong>, and a <strong>soft palate transition zone</strong> posteriorly. Denture design principles for phonetic fidelity:</p>
+  <ul>
+    <li><strong>Reproduce the rugae</strong> in the anterior palatal zone — they are critical for /t/, /d/, /n/, and /l/ articulation. The absence of rugae (over-polished acrylic) produces a noticeably thick, forward-articulated speech pattern.</li>
+    <li><strong>Avoid bulky palatal flanges</strong> — particularly in the upper anterior lingual area where the tongue tip contacts during /t/, /d/ sounds.</li>
+    <li><strong>The palatal vault height</strong> should replicate the anatomical arch height recorded in the impression — a flattened vault causes muffled velars (/k/, /g/).</li>
+    <li><strong>The post-dam (posterior palatal seal)</strong> must not intrude into the functional hard palate — it should be confined to the vibrating line and the soft palate tissues only.</li>
+  </ul>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield — Phonetics Summary</div>
+    <div class="hy-body">
+      <ul>
+        <li><strong>/f/ and /v/</strong> → Tests upper incisal edge <em>vertical height</em> and <em>labiolingual position</em></li>
+        <li><strong>/s/ and /z/</strong> → Tests <em>VDO accuracy</em> (closest speaking space = 1–2 mm); the gold standard phonetic VDO check</li>
+        <li><strong>/th/</strong> → Tests <em>incisal overjet and overbite</em></li>
+        <li><strong>/m/</strong> → Tests <em>physiologic rest position</em> and <em>lip support</em></li>
+        <li><strong>/t/, /d/, /n/, /l/</strong> → Tests <em>palatal contour and anterior tooth lingual surface</em></li>
+        <li><strong>/k/, /g/</strong> → Tests <em>posterior palatal contour</em></li>
+        <li><strong>"sixty-six" / "Mississippi"</strong> → Comprehensive sibilant stress test</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 8: ARCH FORM -->
+<div class="section" id="s8">
+  <div class="section-label">Section 8</div>
+  <h2>Arch Form, Tooth Selection, and Anthropometric Guides</h2>
+
+  <h3>Dental Arch Form</h3>
+  <p>The form of the dental arch — square, tapering, or ovoid — should ideally replicate the patient's pre-extraction arch form. When pre-extraction records are unavailable, the following anthropometric guides are used:</p>
+  <ul>
+    <li><strong>The shape of the residual ridge</strong>: In early post-extraction states, the ridge form mirrors the original arch form.</li>
+    <li><strong>The shape of the face</strong>: Leon Williams (1914) proposed the correlation between facial form and arch form — square face → square arch; tapering face → tapering arch; ovoid face → ovoid arch. This is a guide, not a rule — significant individual variation exists.</li>
+    <li><strong>The incisive papilla and palatine rugae</strong>: The positions of the rugae and the papilla together outline the anterior arch form.</li>
+  </ul>
+
+  <h3>Tooth Size Selection</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Measurement</th>
+          <th>Anthropometric Guide</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Upper central incisor width</td>
+          <td>Width of the base of the nose divided by 1.618 (golden proportion); or bizygomatic width / 16; or one-sixth the inter-commissure width</td>
+          <td>Average 8.5–9.5 mm; use pre-extraction photos if available</td>
+        </tr>
+        <tr>
+          <td>Upper central incisor length (crown height)</td>
+          <td>1/16 of face height (nasion to menton); or proportional to upper lip length; verified by /f/ phoneme</td>
+          <td>Average 10–11 mm; decreases with age as the upper lip lengthens</td>
+        </tr>
+        <tr>
+          <td>Inter-canine width (upper)</td>
+          <td>Equals the distance between the outer edges of the alar bases of the nose</td>
+          <td>Average 35–38 mm labial bow of upper rim</td>
+        </tr>
+        <tr>
+          <td>Posterior teeth width selection</td>
+          <td>Buccolingual width = distance from the buccal shelf to the tongue space (neutral zone width)</td>
+          <td>Use narrower buccolingual width for unstable ridges</td>
+        </tr>
+        <tr>
+          <td>Posterior teeth — mesiodistal length</td>
+          <td>From distal of upper canine to the hamular notch perpendicular; for lower: distal of lower canine to retromolar pad anterior border</td>
+          <td>Determines number and size of posterior teeth to be selected</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Williams' Classification of Tooth and Face Forms</h3>
+  <p>Leon Williams (1914) described three basic face forms and their corresponding tooth shapes, based on anthropological measurements of facial width and jaw contour. While the theory has been criticized for oversimplification, it remains a useful clinical starting point:</p>
+  <ul>
+    <li><strong>Square (orthognathic)</strong>: Nearly equal width at forehead, cheekbones, and jaw. Square arch form. Upper central incisors have relatively uniform width from cervix to incisal edge.</li>
+    <li><strong>Tapering (leptoprosopic)</strong>: Narrow, elongated face. Tapered arch form. Upper central incisors are narrower at the cervix, wider at the incisal edge.</li>
+    <li><strong>Ovoid (euryprosopic)</strong>: Wide face with rounded contours. Ovoid arch. Centrals rounded at incisal angles.</li>
+  </ul>
+</div>
+
+<!-- SECTION 9: CLINICAL INTEGRATION -->
+<div class="section" id="s9">
+  <div class="section-label">Section 9</div>
+  <h2>Clinical Integration: From Edentulous Diagnosis to Delivery</h2>
+
+  <h3>The Measurement Workflow — Complete Sequence</h3>
+  <div class="mech-box">
+    <div class="mech-title">Step-by-Step Complete Denture Measurement Protocol</div>
+    <ol>
+      <li><strong>Pre-treatment assessment</strong>: Gather pre-extraction photographs, existing dentures, study models, and relevant radiographs. Measure VDO on old dentures if available.</li>
+      <li><strong>Primary impression and cast</strong>: Identify and mark: incisive papilla, hamular notches, fovea palatinae, retromolar pads, residual ridge form, and ridge classification (Cawood–Howell).</li>
+      <li><strong>Construct upper and lower custom trays</strong> and record final impressions.</li>
+      <li><strong>Desktop HIP plane tripoding (the Saleh Method)</strong>: On the maxillary cast, identify the incisive papilla and bilateral hamular notches. Tripod the cast on the surveyor and scribe the occlusal rim to the HIP plane (see dedicated section). This is completed before the rim is brought to the patient.</li>
+      <li><strong>Upper occlusal rim construction and orientation:</strong>
+        <ul>
+          <li>The posterior rim arrives already trimmed to the HIP plane from the desktop stage.</li>
+          <li>Set the anterior rim height: 1–2 mm below upper lip at rest.</li>
+          <li>Set the midline to the facial midline.</li>
+          <li>Verify with Fox plane indicator: bipupillary line (front) and Camper's plane (side).</li>
+        </ul>
+      </li>
+      <li><strong>VDO determination</strong>: Use facial measurements (Willis gauge), phonetic test (/s/ speaking space), and swallowing method — confirm with at least two methods.</li>
+      <li><strong>Centric relation record</strong>: With VDO set, record the mandible in centric relation using gothic arch tracing or bimanual manipulation.</li>
+      <li><strong>Face-bow transfer</strong>: Mount the upper cast on the articulator using the face-bow (Frankfort plane transfer). Lower cast mounted in centric relation at the established VDO.</li>
+      <li><strong>Tooth selection</strong>: Upper central incisor size by inter-alar width, facial form, and pre-extraction records. Posterior teeth by available arch length (distal canine to hamular notch perpendicular).</li>
+      <li><strong>Wax try-in</strong>: Verify all measurements clinically:
+        <ul>
+          <li>Midline alignment</li>
+          <li>Incisal edge position (/f/ test)</li>
+          <li>VDO (/s/ sibilant test, freeway space)</li>
+          <li>Lip support and facial appearance</li>
+          <li>Posterior tooth position relative to residual ridges and neutral zone</li>
+          <li>Palatal contour (/t/, /d/, /k/ test)</li>
+        </ul>
+      </li>
+      <li><strong>Processing and delivery</strong>: After processing, verify that no dimensional change has altered the VDO. Adjust occlusion with selective grinding. Re-verify phonetics.</li>
+    </ol>
+  </div>
+
+  <h3>Common Measurement Errors and Their Clinical Consequences</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Measurement Error</th>
+          <th>Stage Where Error Occurs</th>
+          <th>Clinical Consequence</th>
+          <th>Correction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anterior rim set too long</td>
+          <td>Upper rim construction</td>
+          <td>Excessive tooth display, failure of /f/ test (strain required), esthetic complaint</td>
+          <td>Trim the anterior rim height; re-verify with /f/ phoneme</td>
+        </tr>
+        <tr>
+          <td>Midline set off-center</td>
+          <td>Upper rim construction or tooth arrangement</td>
+          <td>Esthetic asymmetry; patient rarely tolerates even 1 mm midline shift</td>
+          <td>Reset midline to facial axis; confirm with lip philtrum</td>
+        </tr>
+        <tr>
+          <td>Occlusal plane tilted left or right</td>
+          <td>Occlusal rim trimming</td>
+          <td>Unilateral occlusal contacts, lateral instability, crossbite-like contacts</td>
+          <td>Re-trim with Fox plane indicator against bipupillary line</td>
+        </tr>
+        <tr>
+          <td>VDO over-opened by 2–3 mm</td>
+          <td>VDO determination</td>
+          <td>Clicking speech, muscle fatigue, strained appearance, hyperactive mentalis</td>
+          <td>Reduce rim height by 2–3 mm; re-verify phonetically</td>
+        </tr>
+        <tr>
+          <td>VDO over-closed by 2–3 mm</td>
+          <td>VDO determination</td>
+          <td>Deep chin fold, angular cheilitis, poor lip support, muffled /s/</td>
+          <td>Increase rim height; add to lower rim; re-verify with freeway space measurement</td>
+        </tr>
+        <tr>
+          <td>Upper anteriors set too far posteriorly</td>
+          <td>Tooth arrangement</td>
+          <td>Flat upper lip, inadequate lip support, /f/ test: no tooth-lip contact</td>
+          <td>Move upper anteriors labially using incisive papilla 8–10 mm guide</td>
+        </tr>
+        <tr>
+          <td>Upper posteriors too far buccally</td>
+          <td>Tooth arrangement</td>
+          <td>Buccal interferences, denture rocking, check biting</td>
+          <td>Reposition teeth toward the neutral zone; reduce buccolingual width</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 10: SUMMARY -->
+<div class="section" id="s10">
+  <div class="section-label">Section 10</div>
+  <h2>Core Memory Recap — Ultra High-Yield</h2>
+
+  <div class="summary-box">
+    <div class="sum-title">If You Remember Only This</div>
+    <ul>
+      <li>The <strong>incisive papilla</strong> is the single most important intraoral landmark — it does not resorb and directly guides upper anterior tooth position (labial surface 8–10 mm anterior to papilla center).</li>
+      <li>The <strong>HIP Plane</strong> (hamular notches + incisive papilla) is parallel to the natural occlusal plane in 88–95% of patients — it is superior to the Frankfort Plane for direct occlusal rim orientation.</li>
+      <li>The <strong>Frankfort Horizontal Plane</strong> is essential for articulator mounting (face-bow transfer) and cephalometric analysis — but has up to 23° scatter from the true occlusal plane between individuals; always supplement with intraoral verification.</li>
+      <li><strong>Camper's plane</strong> (ala-tragus) is a useful guide but has up to 12° inter-individual variation — never use it as the sole reference.</li>
+      <li><strong>VDO = VDR − Freeway Space</strong>; freeway space = 2–4 mm; verified phonetically by the /s/ sibilant closest speaking space (1–2 mm gap).</li>
+      <li>Phonetics are a mandatory clinical measurement — <strong>/f/v</strong> for incisal height, <strong>/s/z</strong> for VDO, <strong>/th/</strong> for overjet, <strong>/m/</strong> for rest position, <strong>/t/d/n/l/</strong> for palatal contour.</li>
+      <li>The <strong>retromolar pad</strong> (upper one-third level) is the definitive posterior occlusal plane height reference for the lower denture.</li>
+      <li>The <strong>bipupillary line</strong> must be parallel to the anterior occlusal plane — verified with a Fox plane indicator at every try-in.</li>
+      <li>The <strong>neutral zone</strong> is the ideal locus for lower posterior teeth — balances buccal and lingual muscular forces, maximizes lower denture stability.</li>
+      <li>Always use <strong>at least two independent methods</strong> to confirm any critical measurement (VDO, occlusal plane, anterior tooth position) — no single landmark or method is infallible.</li>
+    </ul>
+  </div>
+
+  <div class="high-yield">
+    <div class="hy-label">High Yield — Numbers to Memorize</div>
+    <div class="hy-body">
+      <ul>
+        <li>Incisive papilla to upper incisor labial surface: <strong>8–10 mm</strong></li>
+        <li>Freeway space (interocclusal distance): <strong>2–4 mm</strong> (mean 3 mm)</li>
+        <li>Upper central incisor display below relaxed upper lip: <strong>1–2 mm</strong> at rest (3.5 mm in young adults, ~0 mm in elderly)</li>
+        <li>Closest speaking space during /s/: <strong>1–2 mm</strong></li>
+        <li>HIP plane accuracy vs. occlusal plane: <strong>88–95%</strong> of patients within 2°</li>
+        <li>FHP accuracy vs. occlusal plane: <strong>54–62%</strong> of patients within 2°</li>
+        <li>Mechanical porion (ear rod) deviation from anatomical porion: <strong>~8–13 mm</strong></li>
+        <li>Retromolar pad occlusal plane level: <strong>upper one-third</strong> of pad height</li>
+        <li>Camper's plane inter-individual variation: <strong>up to 12°</strong></li>
+        <li>FHP inter-individual scatter range: <strong>−14° to +9°</strong> from the occlusal plane</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 11: REVIEW QUESTIONS -->
+<div class="section" id="s11">
+  <div class="section-label">Section 11</div>
+  <h2>Review Questions and Answers</h2>
+
+  <div class="question-block">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A 72-year-old edentulous patient has had maxillary ridge resorption for 15 years. You are constructing a new upper complete denture. Which landmark would you use as the primary reference to position the upper central incisors in the labiolingual plane, and why?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The <strong>incisive papilla</strong>. The labial surface of the upper central incisors should be placed approximately <strong>8–10 mm anterior to the center of the incisive papilla</strong>. This landmark is preferred because it is stable relative to the bony palate and does not migrate with alveolar resorption, unlike the residual ridge crest. The ridge crest in advanced resorption may be several millimeters superior and posterior to its original position, making it an unreliable guide for tooth placement.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">Explain why the HIP Plane is considered more accurate than the Frankfort Horizontal Plane for establishing the occlusal plane orientation in a complete denture patient. Include reference to the evidence base.</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The HIP Plane is defined by <strong>bilateral hamular notches and the incisive papilla</strong> — three intraoral landmarks that are directly contiguous with the original maxillary dental arch and are resistant to resorption. Studies (Ismail & Bowman 1968; Pitchford 1991) demonstrated the HIP Plane is parallel to the natural occlusal plane in <strong>88–95%</strong> of patients. In contrast, the Frankfort Horizontal Plane (porion + orbitale) is an extraoral skull-base reference with a documented scatter of up to <strong>23°</strong> from the true occlusal plane between individuals, with parallel alignment in only <strong>54–62%</strong>. Additionally, the mechanical porion (face-bow ear rod) deviates 8–13 mm from the true anatomical porion, introducing systematic transfer error.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">A patient is trying in their wax dentures and produces a clearly audible click whenever they speak. What does this finding indicate, and how do you correct it?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      Audible clicking during speech indicates <strong>over-opened vertical dimension of occlusion (VDO)</strong>. The freeway space is insufficient, so the closest speaking space forces the upper and lower teeth into contact during the sibilant portion of speech. Correction: reduce VDO in 1 mm increments by removing wax from the occlusal surface of the rims, re-check the /s/ sibilant test (aim for 1–2 mm speaking space), re-measure freeway space (target 2–4 mm), and re-verify with the "sixty-six" sibilant stress test before accepting the corrected VDO.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">Which phoneme tests the upper incisal edge vertical position, and what are the findings if the incisors are set too high versus too low?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The <strong>/f/ and /v/ phonemes</strong> (labiodental fricatives). The inner wet-dry junction of the lower lip should lightly contact the incisal edges of the upper centrals during production of these sounds. If the upper incisors are set <strong>too high</strong> (excessive length or vertical position), the lower lip must strain superiorly to contact them — the patient will appear to labor over /f/ sounds. If the incisors are set <strong>too low</strong> (short or placed too superiorly), there is no contact whatsoever during /f/ — the patient cannot produce a proper labiodental fricative and it sounds muffled or distorted.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">A patient presents with previous maxillary tuberosity resection surgery on the right side. How does this affect your use of the HIP Plane, and what alternative references do you use?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      Maxillary tuberosity resection on the right side may distort or eliminate the right <strong>hamular notch</strong>, which is defined partly by the tuberosity and the pterygoid hamulus. If the hamular notch is asymmetrically altered, the HIP Plane cannot be reliably constructed from three intact landmarks. In this situation: (1) Use the <strong>Frankfort Horizontal Plane via face-bow transfer</strong> as the primary extraoral reference; (2) Use <strong>Camper's plane</strong> (ala-tragus line) as a bilateral external verification; (3) Use <strong>the retromolar pad</strong> for lower occlusal plane height; (4) Cross-verify with phonetics at try-in. The incisive papilla remains valid for anterior tooth position even when the HIP Plane itself cannot be fully constructed.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">What is the "neutral zone" and why is it the preferred location for lower posterior teeth in complete denture construction?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The neutral zone is the potential space in the oral cavity where the forces of the <strong>buccinator and cheek muscles</strong> (acting inward) and the <strong>tongue</strong> (acting outward) are in equilibrium. When lower posterior teeth are placed within this zone, the denture receives balanced lateral forces from both sides, minimizing destabilizing horizontal forces during function, speech, and parafunction. Teeth placed buccal to the neutral zone receive excessive buccal pressure from the cheeks → denture dislodgement. Teeth placed lingual to the neutral zone receive excessive lingual pressure from the tongue → denture tipping. Determining the neutral zone through functional impression techniques or careful anatomical analysis optimizes lower denture stability, particularly in patients with advanced ridge resorption.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">Describe the three-criteria check that must be satisfied before accepting the upper occlusal rim orientation at the jaw registration appointment.</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The three criteria are: (1) <strong>Parallel to the HIP Plane</strong> — the posterior rim surface should coincide with the plane defined by the incisive papilla and bilateral hamular notches, established on the cast via surveyor tripoding (the Saleh Method) at the desktop stage; (2) <strong>Parallel to the bipupillary line</strong> — when viewed from the front with a Fox plane indicator, the anterior bar should be level with both pupils, confirming no lateral tilt; (3) <strong>Parallel to Camper's plane (ala-tragus line)</strong> — when viewed from the side, the posterior wings of the Fox plane should parallel the line from the ala of the nose to the middle of the tragus. All three criteria must be met simultaneously. If discrepancy exceeds 3–4° in any plane, re-trim the occlusal rim and re-verify.
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">A 65-year-old edentulous female patient complains that her new complete dentures make her look "old and shrunken," with a deep fold below her lower lip and difficulty closing her mouth. What measurement error is most likely responsible, and how would you confirm it?</div>
+    <div class="q-answer">
+      <div class="ans-label">Answer</div>
+      The most likely error is <strong>over-closure of vertical dimension of occlusion (VDO)</strong> — the dentures are fabricated at a vertical height that is too low. Clinical signs of over-closure include: deepened mentolabial sulcus ("witches chin" appearance), angular cheilitis, loss of lip support and lower facial fullness, and the appearance of excessive lower facial shortening. To confirm: (1) Measure the lower face height with dentures in versus at rest — if freeway space exceeds 5–6 mm, VDO is over-closed; (2) Phonetic test — /s/ will be muffled with excessive interpositional space; (3) Willis gauge — the nose-chin distance will be significantly shorter than the pupil-commissure distance. Correction requires either remaking the denture bases at a new (increased) VDO or adding to the occlusal surfaces with chairside resin and remounting on an articulator.
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 12: REFERENCES -->
+<div class="section" id="s12">
+  <div class="section-label">Section 12</div>
+  <h2>References</h2>
+
+  <ul class="ref-list">
+    <li>Ismail YH, Bowman JF. Position of the occlusal plane in natural and artificial teeth. <em>J Prosthet Dent.</em> 1968;20(5):407–411.</li>
+    <li>Pitchford JH. A reevaluation of the incisive papilla for locating the positions of maxillary anterior teeth. <em>J Prosthet Dent.</em> 1991;66(4):488–492.</li>
+    <li>Braun S, Legan HL, Merow WL. Posterior teeth and the determination of vertical dimension of occlusion. <em>J Prosthet Dent.</em> 1999;81(3):338–340.</li>
+    <li>Karkazis HC, Polyzois GL. Cephalometrically predicted occlusal plane and its relationship to the Frankfort horizontal plane. <em>J Prosthet Dent.</em> 1991;65(6):801–805.</li>
+    <li>Van Nortwick M, Farman AG. Cephalometric assessment of the transverse maxillary dental arch relationship and the influence of reference planes. <em>Angle Orthod.</em> 1990;60(1):11–18.</li>
+    <li>Zarb GA, Hobkirk JA, Eckert SE, Jacob RF. <em>Prosthodontic Treatment for Edentulous Patients: Complete Dentures and Implant-Supported Prostheses.</em> 13th ed. Mosby Elsevier; 2013.</li>
+    <li>Watt DM, MacGregor AR. <em>Designing Complete Dentures.</em> 2nd ed. Wright; 1986.</li>
+    <li>Heartwell CM, Rahn AO. <em>Syllabus of Complete Dentures.</em> 4th ed. Lea & Febiger; 1986.</li>
+    <li>Martone AL. Effects of complete dentures on facial esthetics. <em>J Prosthet Dent.</em> 1964;14(2):231–255.</li>
+    <li>Bansal R, Palaskar J, et al. Evaluation of HIP plane accuracy in edentulous patients of South Asian origin. <em>J Indian Prosthodont Soc.</em> 2013;13(4):372–377.</li>
+    <li>Clapp GW. How the science of esthetic tooth form selection was made easy. <em>J Prosthet Dent.</em> 1955;5(5):596–608.</li>
+    <li>Williams JL. The esthetic smile and its relation to dental arch form. <em>Dent Items Interest.</em> 1914;36:804–817.</li>
+    <li>Fenlon MR, Sherriff M. An investigation of factors influencing patients' satisfaction with new complete dentures using structural equation modelling. <em>J Dent.</em> 2008;36(6):427–434.</li>
+    <li>Cawood JI, Howell RA. A classification of the edentulous jaws. <em>Int J Oral Maxillofac Surg.</em> 1988;17(4):232–236.</li>
+    <li>Fish EW. <em>Principles of Full Denture Prosthesis.</em> 4th ed. Staples Press; 1948.</li>
+    <li>Pound E. The mandibular movements of speech and their seven related values. <em>J Prosthet Dent.</em> 1966;16(5):835–843.</li>
+    <li>Devan MM. Basic principles in impression making. <em>J Prosthet Dent.</em> 1952;2(1):26–35.</li>
+    <li>Rudd KD, Morrow RM. <em>Dental Laboratory Procedures: Complete Dentures.</em> Vol 1. Mosby; 1986.</li>
+  </ul>
+</div>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer>
+  <strong>M. Y. Saleh, B.D.S., D.D.S.</strong> &nbsp;|&nbsp; Complete Prosthodontics — Anthropological Measurements &nbsp;|&nbsp; For Healthcare Professionals &nbsp;|&nbsp; June 2026
+</footer>
+
+</body>
+</html>
